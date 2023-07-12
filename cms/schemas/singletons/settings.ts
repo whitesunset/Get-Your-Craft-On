@@ -25,10 +25,10 @@ export default defineType({
       name: 'notFoundPage',
       title: '404 page',
     },
-    {
-      name: 'seo',
-      title: 'SEO',
-    },
+    // {
+    //   name: 'seo',
+    //   title: 'SEO',
+    // },
   ],
   fieldsets: [
     {
@@ -85,14 +85,14 @@ export default defineType({
       type: 'image',
       group: 'siteBranding',
     },
-    {
-      name: 'clrDefault',
-      title: 'Default Colour',
-      type: 'color',
-      group: 'siteBranding',
-      fieldset: 'colourScheme',
-      initialValue: '#2b180d',
-    },
+    // {
+    //   name: 'clrDefault',
+    //   title: 'Default Colour',
+    //   type: 'color',
+    //   group: 'siteBranding',
+    //   fieldset: 'colourScheme',
+    //   initialValue: '#2b180d',
+    // },
     {
       name: 'clrPrimary',
       title: 'Primary Colour',
@@ -108,18 +108,6 @@ export default defineType({
       group: 'siteBranding',
       fieldset: 'colourScheme',
       initialValue: '#000000',
-    },
-    {
-      name: 'fontDefault',
-      title: 'Default Font',
-      group: 'siteBranding',
-      fieldset: 'fonts',
-      type: 'array',
-      of: [
-        {
-          type: 'font',
-        },
-      ],
     },
     {
       name: 'fontPrimary',
@@ -178,12 +166,12 @@ export default defineType({
       group: 'notFoundPage',
     }),
     // SEO
-    defineField({
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
-      group: 'seo',
-    }),
+    // defineField({
+    //   name: 'seo',
+    //   title: 'SEO',
+    //   type: 'seo',
+    //   group: 'seo',
+    // }),
   ],
   preview: {
     prepare() {
