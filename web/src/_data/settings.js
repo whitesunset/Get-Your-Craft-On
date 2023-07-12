@@ -3,7 +3,7 @@ const client = require("../utils/sanityClient");
 async function loadSettings() {
   const siteSettings = await client
     .fetch(
-      `.
+      `
       *[_type=='settings']{
         logo,
         'logoUrl': logo.asset->url,
@@ -34,7 +34,7 @@ async function loadSettings() {
     )
 
     .catch((err) => console.error(err));
-  console.log(siteSettings);
+  // console.log(siteSettings);
   return siteSettings;
 }
 

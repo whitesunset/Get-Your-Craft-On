@@ -1,7 +1,6 @@
 require("dotenv").config();
 
-const { createClient } = require("@sanity/client");
-const sanityClient = createClient;
+const sanityClient = require("@sanity/client");
 
 const sanity = {
   projectId: process.env.SANITY_PROJECT_ID,
