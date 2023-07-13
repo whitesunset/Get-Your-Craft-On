@@ -1,8 +1,6 @@
 require("dotenv").config();
 
 const { createClient } = require("@sanity/client");
-const sanityClient = createClient;
-
 const sanity = {
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: process.env.SANITY_DATASET,
@@ -10,4 +8,4 @@ const sanity = {
   useCdn: process.env.SANITY_USE_CDN,
 };
 
-module.exports = sanityClient({ ...sanity });
+module.exports = createClient({ ...sanity });

@@ -4,12 +4,14 @@ async function loadSettings() {
   const siteSettings = await client
     .fetch(
       `
-      *[_type=='settings']{
+      *[_type=='settings'][0]{
         logo,
         'logoUrl': logo.asset->url,
         clrPrimary,
         clrSecondary,
         primaryLocation->{
+          address,
+          addressExt,
           city,
           country,
           postcode,
