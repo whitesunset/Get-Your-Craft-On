@@ -33,7 +33,7 @@ export default defineConfig({
     customDocumentActions(),
     media(),
     googleMapsInput({
-      apiKey: 'AIzaSyCqD3-Y1EodxNUseHeRkuRXWAAku5g8T28',
+      apiKey: process.env.GOOGLE_MAPS_API_KEY,
       defaultZoom: 11,
       defaultLocale: null,
       defaultLocation: {
