@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ["~/assets/scss/bootstrap.scss"],
+  css: [
+    "~/assets/scss/reset.scss",
+    "~/assets/scss/variables.scss",
+    "~/assets/scss/bootstrap.scss",
+  ],
   modules: ["@vueuse/nuxt", "@nuxtjs/sanity"],
   sanity: {
     projectId: process.env.SANITY_STUDIO_PROJECT_ID,
@@ -9,22 +13,34 @@ export default defineNuxtConfig({
     apiVersion: process.env.SANITY_STUDIO_API_VERSION,
     useCdn: process.env.SANITY_STUDIO_USE_CDN,
   },
-  // app: {
-  //   head: {
-  //     script: [
-  //       {
-  //         src: "/assets/js/vendor/modernizr-3.6.0.min.js",
-  //         tagPosition: "bodyClose",
-  //       },
-  //       {
-  //         src: "/assets/js/vendor/jquery-3.6.0.min.js",
-  //         tagPosition: "bodyClose",
-  //       },
-  //       {
-  //         src: "/assets/js/vendor/jquery-migrate-3.3.0.min.js",
-  //         tagPosition: "bodyClose",
-  //       },
-  //       { src: "/assets/js/plugins/slick.js", tagPosition: "bodyClose" },
+  vendor: ["jquery", "bootstrap"],
+  plugins: [],
+  app: {
+    head: {
+      script: [
+        {
+          src: "/assets/js/vendor/modernizr-3.6.0.min.js",
+          tagPosition: "bodyOpen",
+        },
+        {
+          src: "/assets/js/vendor/jquery-3.6.0.min.js",
+          tagPosition: "bodyOpen",
+        },
+        {
+          src: "/assets/js/vendor/jquery-migrate-3.3.0.min.js",
+          tagPosition: "bodyOpen",
+        },
+        { 
+          src: "/assets/js/vendor/bootstrap.bundle.min.js", 
+          tagPosition: "bodyOpen" 
+        },
+        { 
+          src: "/assets/js/plugins/jquery.countdown.js", 
+          tagPosition: "bodyOpen" 
+        },
+      ]
+    }
+  }
   //       {
   //         src: "/assets/js/plugins/jquery.syotimer.min.js",
   //         tagPosition: "bodyClose",
